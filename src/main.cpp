@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "game.h"
+#include "block.h"
 #include <iostream>
 
 double lastUpdateTime = 0;
@@ -18,6 +19,7 @@ bool EventTriggered(double interval)
 int main() 
 {
     InitWindow(500, 620, "Raylib project");
+    Texture2D Iblock = LoadTexture("assets/Iblock.png");
     SetTargetFPS(60);
 
     Game game = Game();
@@ -56,5 +58,7 @@ int main()
         EndDrawing();
     }
 
+    UnloadTexture(Iblock);
+    
     CloseWindow();
 }
