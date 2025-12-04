@@ -1,9 +1,5 @@
 #include "block.h"
 
-Vector2 origin = { 16, 16 };
-float rotation = 0.0f;
-Color tint = WHITE;
-
 Block::Block()
 {
     cellSize = 30;
@@ -19,7 +15,6 @@ void Block::Draw(int offsetX, int offsetY)
     for(Position item: tiles)
     {
         DrawRectangle(item.column * cellSize + offsetX, item.row * cellSize + offsetY, cellSize - 1, cellSize - 1, colors[id]);
-        DrawTexturePro(Iblock, {0, 0, 30, 30}, {item.column * cellSize + offsetX, item.row * cellSize + offsetY, cellSize - 1, cellSize - 1}, origin, rotation, tint);
     }
 }
 

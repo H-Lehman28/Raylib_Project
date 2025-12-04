@@ -19,13 +19,13 @@ bool EventTriggered(double interval)
 int main() 
 {
     InitWindow(500, 620, "Raylib project");
-    Texture2D Iblock = LoadTexture("assets/Iblock.png");
     SetTargetFPS(60);
 
     Game game = Game();
 
     while(WindowShouldClose() == false)
     {
+        UpdateMusicStream(game.music);
         game.HandleInput();
         if(EventTriggered(0.2))
         {
@@ -57,8 +57,6 @@ int main()
         game.Draw();
         EndDrawing();
     }
-
-    UnloadTexture(Iblock);
     
     CloseWindow();
 }
